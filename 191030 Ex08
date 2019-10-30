@@ -1,0 +1,166 @@
+/*Q1. 1~20까지 중, 배열을 이용하여 짝수를 출력하시오
+
+Q2. 1~20까지 중, 베열을 이용하여 3의 배수를 출력하시오
+
+Q3. A~Z까지 배열에 담아 출력하시오
+
+Q4. 배열을 이용하여 다음을 출력하시오
+*
+**
+***
+****
+
+Q5. 배열을 이용하여 다음을 출력하시오
+a
+bc
+def
+ghij
+
+Q6. 절대값을 구하는 메서드를 만드세요
+Q7. sort(int a, int b, int c) 를 만들고
+		a=7, b=3, c=5 출력을 3<5<7
+
+Q8. int[] arr={7,3,5}를 arr={3,5,7}로 만드시오.*/
+
+package com.bit;
+
+import java.util.*;
+
+class Ex08{
+	
+	public static void main(String[] args){
+		
+		line();
+	//Q1. 1~20까지 중, 배열을 이용하여 짝수를 출력하시오
+		int[] N = new int[20];
+		int i = 0;
+		int j = 0;
+		while(i<N.length){
+			N[i] = i+1;
+			i++;
+		}	
+		while(j<10){
+			System.out.print(N[1+j*2] + " ");
+			j++;
+		}
+	
+		line();
+	//Q2. 1~20까지 중, 베열을 이용하여 3의 배수를 출력하시오
+		
+		int[] A = new int[20];
+		int su1 = 0;
+		int su2 = 0;
+		while(su1<A.length){
+			A[su1] = su1+1;
+			su1++;
+		}	
+		while(su2<6){
+			System.out.print(A[2+su2*3] + " ");
+			su2++;
+		}
+	
+	line();
+	//Q3. A~Z까지 배열에 담아 출력하시오
+	
+		char[] B = new char[26];
+		char apb = 'A';
+		int su3 = 0;
+		int cnt = 0;
+		while(cnt<B.length){
+			B[cnt] = apb;
+			apb+=1;
+			cnt++;
+		}	
+		while(su3<B.length){
+			System.out.print(B[su3] + " ");
+			su3++;
+		}
+	
+	line();
+	/*
+	
+	Q4. 배열을 이용하여 다음을 출력하시오
+	*
+	**
+	***
+	****
+	
+	*/
+	
+		int[] C = new int[4];
+		int su4 = 0;
+		while(su4<C.length){
+			C[su4] = su4+1;
+			su4++;
+		}
+		int k=0;
+		while(k<C.length){
+			int l=0;
+			while(l<C[k]){
+				System.out.print("★");
+				l++;
+			}
+			System.out.println();
+			k++;
+		}
+
+	line();
+	/*
+	Q5. 배열을 이용하여 다음을 출력하시오
+	a
+	bc
+	def
+	ghij
+	*/
+		char[] D = new char[10];
+		char eng = 'a';
+		int su5 = 0;
+		while(su5<D.length){
+			D[su5] = eng;
+			eng++;
+			su5++;
+		}
+		int m=0;
+		int n=0;
+		int o=1;
+		while(m<D.length){
+			System.out.print(D[m]);
+			if(m==n){
+				o++;
+				n+=o;
+				System.out.println();
+			}
+			m++;
+		}
+		
+	line();
+	//Q6. 절대값을 구하는 메서드를 만드세요
+		Scanner sc = new Scanner(System.in);
+		int P = sc.nextInt();
+		if(P<0){
+			P = P + (P*-2);
+		}
+		System.out.println(P);
+	
+	line();
+	//Q7. sort(int a, int b, int c) 를 만들고
+	//	a=7, b=3, c=5 출력을 3<5<7
+		
+		int num =1;
+		while(num>0){
+			int num1 = sc.nextInt();
+			int num2 = sc.nextInt();
+			int num3 = sc.nextInt();
+			int[] sort = {num1, num2, num3};
+			if(
+		}
+		
+	}//main end
+	
+	
+	public static void line(){
+		System.out.println("\n----------------------------------------------");
+	}
+	
+	
+}//class end
