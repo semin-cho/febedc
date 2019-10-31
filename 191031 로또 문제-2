@@ -1,0 +1,61 @@
+package com.bit.day09;
+import java.util.*;
+
+public class Ex05 {
+	
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("몇장을 구매하시겠습니까? (최대 5장) > ");
+		int buy = sc.nextInt();
+		int re = 0;
+		System.out.print("\n\n\t\t    나눔 로또 6/45\n-----------------------------------------------------------\n");
+		//입력한 구매 장수만큼 반복 시작
+		while(re<buy){
+				//1-45까지 배열에 담음 시작
+				int[] num = new int[45];
+				int i = 0;
+				while(i<num.length){
+					num[i] = i+1;
+					i++;
+				}//1-45까지 배열에 담음 끝
+				
+				int j = 0;//배열[0-5]까지 랜덤한 숫자 입력 시작
+				while(j<6){
+					double ran = Math.random();
+					int k = (int)(ran*45);
+					int temp = 0;
+					temp = num[j];
+					num[j] = num[k];
+					num[k] = temp;
+					j++;
+				}//배열[0-5]까지 랜덤한 숫자 입력 끝
+				
+				int m = 0; //오름차순 정렬 시작
+				while(m<6){
+					int n = m+1;
+					while(n<6){
+						if(num[m]>num[n]){
+							int sub = num[m];
+							num[m] = num[n];
+							num[n] = sub;
+						}
+						n++;
+					}
+					m++;
+				} //오름차순 정렬 끝
+			
+				char ch = 'A';
+				System.out.print((char)(ch+re)+" 자 동 \t");
+				int l = 0;//6개 숫자 출력 시작
+				while(l<6){
+					System.out.print(num[l] + "\t");
+					l++;
+				}//6개 숫자 출력 끝
+			re++;
+			System.out.println();
+		}//전체 프로그램 끝
+		System.out.print("-----------------------------------------------------------\n\t\t\t\t\t\t금 액 : ￦" + buy*1000);
+
+	}//main end
+
+}//class end
