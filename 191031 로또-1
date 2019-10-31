@@ -1,0 +1,67 @@
+package com.bit.day09;
+import java.util.*;
+
+public class Ex04 {
+
+	public static void main(String[] args) {
+		
+		
+		Scanner sc = new Scanner(System.in);
+		
+		int[] sixnum = new int[6]; //6자리 수 저장 공간
+		double ranNum = 0.0;
+		int m = 1;
+		System.out.print("몇 장을 구매하실건가요? (최대 5장) > ");
+		int buy = sc.nextInt();
+		System.out.print("\n\n\t\t    나눔 로또 6/45\n-----------------------------------------------------------\n");
+		
+		while(m<=buy){ //구매 장수만큼 반복
+			int i = 0;
+			while(i<sixnum.length){ //임의의 수 6개 작성 시작
+				ranNum = Math.random(); // 임의의 수 나와라
+				sixnum[i] = (int)(ranNum*45.0)+1;
+				int check=0;
+				while(check<i){
+					if(sixnum[i]==sixnum[check]){
+						i--;
+						break;
+					}
+					check++;
+				}
+				i++;
+			}//while end, 임의의 수 6개 생성 끝
+			
+			int k = 0; //오름차순 정렬
+			while(k<sixnum.length){
+				int l = k+1;
+				while(l<sixnum.length){
+					if(sixnum[k]>sixnum[l]){
+						int temp = sixnum[k];
+						sixnum[k] = sixnum[l];
+						sixnum[l] = temp;
+					}
+					l++;
+				}
+				k++;
+			}
+	
+				int j = 0;
+				char ch = 'A';
+				System.out.print((char)(ch-1+m)+" 자 동 \t"); //임의의 수 6개 출력
+					while(j<sixnum.length){
+						System.out.print(sixnum[j] + "\t");
+						j++;
+					}
+				System.out.println();
+				m++;
+		}
+		System.out.print("-----------------------------------------------------------\n\t\t\t\t\t\t금 액 : ￦" + buy*1000);
+			
+
+		
+		
+		
+		
+	}//main end
+
+}//class end
